@@ -1,0 +1,458 @@
+/* Saira Extra Condense */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@900&display=swap');
+
+/* Telegraf Bold */
+@font-face {
+    font-family: telegraf;
+    src: url(assets/fonts/Telegraf-Bold.woff);
+}
+
+:root {
+    /* colours */
+    --orange-colour: #ff7400;
+    --grey-colour: #e2e3e4;
+}
+
+/* global reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--grey-colour);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+/****************** MAIN PAGE ******************/
+#container {
+    /* container behaviour */
+    width: 98vw;
+    height: 98vh;
+    margin: auto;
+
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+a,
+/* .box = buttons which trigger modals */
+.box {
+    /* text box appearance */
+    background-color: var(--grey-colour);
+    border: var(--orange-colour) 0.5px solid;
+    border-collapse: collapse;
+    padding: 0.5rem;
+
+    /* type appearance */
+    text-decoration: none;
+    color: black;
+
+    /* type behaviour */
+    overflow-wrap: break-word;
+    overflow: hidden;
+    hyphens: manual;
+}
+
+a:hover {
+    /* text box appearance */
+    outline: var(--orange-colour) 4px solid;
+    outline-offset: -2px;
+
+    /* type appearance */
+    color: var(--orange-colour);
+
+    /* mouse appearance */
+    cursor: pointer;
+}
+
+.box:hover {
+    /* text box appearance */
+    background-color: var(--orange-colour);
+
+    /* type appearance */
+    color: var(--grey-colour);
+
+    /* mouse appearance */
+    cursor: pointer;
+}
+
+/****************** POP-UP ******************/
+/* #randomText-div is where pop-up texts all appear in */
+#randomText-div {
+    isolation: isolate;
+    width: min-content;
+    height: min-content;
+}
+
+/* pop-up text are all in <a> tags */
+#randomText-div a {
+    /* text box appearance */
+    border: var(--orange-colour) 2px solid;
+
+    /* text box behaviour */
+    transform: translate(-50%, -50%);
+    position: fixed;
+    max-width: max-content;
+    width: 300px;
+}
+
+/****************** MODAL ******************/
+.modal {
+    /* text box appearance */
+    background-color: var(--orange-colour);
+    overflow: auto;
+
+    /* text box behaviour */
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.modal h1 {
+    /* text box behaviour */
+    width: max-content;
+    margin-top: 5%;
+    margin-left: 2%;
+
+    /* type appearance */
+    color: var(--grey-colour);
+    font-size: 5rem;
+    opacity: 70%;
+}
+
+.modal p {
+    /* text box behaviour */
+    width: 58%;
+    margin-left: 20%;
+    margin-top: 5%;
+
+    /* type appearance */
+    color: black;
+    font-family: telegraf;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.modal span {
+    /* text box behaviour */
+    margin-left: 20%;
+    margin-top: 5%;
+
+    /* type appearance */
+    color: black;
+    font-family: telegraf;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.modal a {
+    background-color: var(--orange-colour);
+    color: black;
+    text-decoration: underline;
+}
+
+.modal a:hover {
+    color: var(--grey-colour);
+}
+
+.modal u {
+    text-decoration: none;
+    color: var(--grey-colour);
+    opacity: 70%;
+}
+
+.exit {
+    color: black;
+    text-align: left;
+    display: inline-block;
+}
+
+.exit:hover {
+    color: var(--grey-colour);
+    cursor: pointer;
+}
+
+/****************** ANIMATION ******************/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fade-in;
+    animation-duration: 250ms;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-50vw);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+.slideLeft {
+    overflow: hidden;
+    animation: slide-left 20s linear infinite;
+}
+
+.text-animation {
+    overflow: hidden;
+}
+
+/****************** FONTS CLASSES ******************/
+.telegraf,
+.arial,
+.saira {
+    line-height: 1.2;
+    padding: 1.2rem;
+}
+
+.telegraf {
+    font-family: telegraf;
+    font-size: 3.3vh;
+    color: var(--orange-colour);
+}
+
+.arial {
+    font-family: arial;
+    font-weight: bold;
+}
+
+.saira {
+    font-family: "Saira Extra Condensed";
+}
+
+/****************** GRID POSITIONING ******************/
+#heading-div {
+    grid-column: 1/6;
+    grid-row: 1/7;
+}
+
+#randomText-div {
+    grid-column: 1/13;
+    grid-row: 1/12;
+}
+
+#button-more {
+    grid-column: 8/10;
+    grid-row: 12/13;
+}
+
+#navigation-div-about {
+    grid-column: 10/12;
+    grid-row: 12/13;
+}
+
+#navigation-div-info {
+    grid-column: 12/13;
+    grid-row: 12/13;
+}
+
+#text01 {
+    grid-column: 6/8;
+    grid-row: 1/6;
+    font-size: 6.5rem;
+}
+
+#text02 {
+    grid-column: 8/11;
+    grid-row: 1/8;
+    font-size: 5rem;
+}
+
+#text03 {
+    grid-column: 6/8;
+    grid-row: 6/8;
+    font-size: 5rem;
+}
+
+#text04 {
+    grid-column: 11/13;
+    grid-row: 6/8;
+    font-size: 7rem;
+}
+
+#text05 {
+    grid-column: 7/9;
+    grid-row: 8/10;
+    font-size: 3rem;
+}
+
+#text06 {
+    grid-column: 1/6;
+    grid-row: 7/9;
+    font-size: 5rem;
+}
+
+#text07 {
+    grid-column: 1/6;
+    grid-row: 9/13;
+    font-size: 11rem;
+}
+
+#text08 {
+    grid-column: 11/13;
+    grid-row: 4/6;
+    font-size: 2rem;
+}
+
+#text09 {
+    grid-column: 7/10;
+    grid-row: 10/12;
+    font-size: 5.5rem;
+}
+
+#text10 {
+    grid-column: 10/13;
+    grid-row: 8/12;
+    font-size: 12rem;
+}
+
+#text11 {
+    grid-column: 6/7;
+    grid-row: 8/13;
+    font-size: 1.8rem;
+}
+
+#text12 {
+    grid-column: 11/13;
+    grid-row: 1/4;
+    font-size: 6rem;
+}
+
+/****************** MEDIA QUERY ******************/
+@media only screen and (max-width:600px) {
+
+    /****************** MAIN PAGE ******************/
+    #heading-div {
+        font-size: 4vw;
+    }
+
+    #button-more,
+    #navigation-div-about,
+    #navigation-div-info {
+        text-align: center;
+        font-size: 6vw;
+    }
+
+    /****************** POP-UPS ******************/
+    #randomText-div a {
+        width: 200px;
+        line-height: 1;
+    }
+
+    /****************** MODALS ******************/
+    .modal h1 {
+        font-size: 2rem;
+    }
+
+    .modal p {
+        /* text box behaviour */
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 20%;
+        font-size: 1.5rem;
+    }
+
+    .modal span {
+        margin-left: 15%;
+        margin-top: 10%;
+        font-size: 1.8rem;
+    }
+
+    /****************** GRID POSITIONING ******************/
+    #heading-div {
+        grid-column: 1/9;
+        grid-row: 1/5;
+    }
+
+    #randomText-div {
+        grid-column: 1/13;
+        grid-row: 1/12;
+    }
+
+    #button-more {
+        grid-column: 1/5;
+        grid-row: 12/13;
+    }
+
+    #navigation-div-about {
+        grid-column: 5/9;
+        grid-row: 12/13;
+    }
+
+    #navigation-div-info {
+        grid-column: 9/13;
+        grid-row: 12/13;
+    }
+
+    #text01 {
+        grid-column: 9/13;
+        grid-row: 1/4;
+        font-size: 2.5rem;
+    }
+
+    #text02 {
+        grid-column: 9/13;
+        grid-row: 4/6;
+        font-size: 1.3rem;
+    }
+
+    #text12 {
+        grid-column: 1/9;
+        grid-row: 5/6;
+        font-size: 3rem;
+    }
+
+    #text03 {
+        grid-column: 7/13;
+        grid-row: 6/10;
+        font-size: 5rem;
+    }
+
+    #text06 {
+        grid-column: 1/7;
+        grid-row: 6/8;
+        font-size: 1.5rem;
+    }
+
+    #text07 {
+        grid-column: 1/7;
+        grid-row: 8/11;
+        font-size: 4rem;
+    }
+
+    #text09 {
+        grid-column: 1/13;
+        grid-row: 11/12;
+        font-size: 2.5rem;
+    }
+
+    #text05 {
+        grid-column: 7/13;
+        grid-row: 10/11;
+        font-size: 1.5rem;
+    }
+
+    #text04,
+    #text08,
+    #text10,
+    #text11 {
+        display: none;
+    }
+}
